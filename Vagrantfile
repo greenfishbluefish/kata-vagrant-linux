@@ -5,7 +5,7 @@
 # or "modelines", set the syntax highlighting for emacs and vim.
 
 # Specify a minimum Vagrant version everyone using this Vagrantfile must use.
-Vagrant.require_version('>= 1.8.1')
+Vagrant.require_version('>= 1.9.0')
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
