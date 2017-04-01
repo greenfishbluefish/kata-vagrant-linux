@@ -23,22 +23,22 @@ simplest solution - Virtualbox.
 
 # Instructions
 
-0. Clone this repository
-0. bundle install
-0. vagrant status
-  * You should see 
-0. bundle exec rake spec
-  * You will see a number of failures.
-0. vagrant ssh
-  * This will log you into the Ubuntu 14.04 VM.
-  * Manually create all the things
-  * Re-run the tests (in another terminal) until they pass.
-0. vagrant destroy
-  * This will destroy the VM
-0. Make the tests pass
-  * This time, use the provided bash scaffolding
-  * Instead of manually creating all the things, put the commands in bash.
-  * As you add each command, run "vagrant provision".
+1. Clone this repository
+1. bundle install
+1. vagrant status
+    * You should see 
+1. bundle exec rake spec
+    * You will see a number of failures.
+1. vagrant ssh
+    * This will log you into the Ubuntu 14.04 VM.
+    * Manually create all the things
+    * Re-run the tests (in another terminal) until they pass.
+1. vagrant destroy
+    * This will destroy the VM
+1. Make the tests pass
+    * This time, use the provided bash scaffolding
+    * Instead of manually creating all the things, put the commands in bash.
+    * As you add each command, run "vagrant provision".
 
 # Concepts
 
