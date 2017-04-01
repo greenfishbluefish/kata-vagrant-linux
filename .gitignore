@@ -1,0 +1,20 @@
+# This entry prevents you from committing this directory. It contains the
+# details of a specific Vagrant VM.
+.vagrant
+
+# These entries are temp files for various editors.
+.*.sw? # VIm swap files.
+
+# In general, you will never want to check in these built Ruby artifacts. .gem
+# files are how Ruby libraries are distributed.
+*.gem
+
+# This directory is commonly used by several code coverage libraries (such as
+# Ruby's simplecov) for the results of a code coverage analysis.
+coverage
+
+# Many naive .gitignore files which have Ruby dependencies will also ignore this
+# file. In general, you *want* to have this file so that every time a developer
+# does "bundle install", everyone will install the exact same version of every
+# dependency. We will check the Gemfile.lock file in.
+#Gemfile.lock
