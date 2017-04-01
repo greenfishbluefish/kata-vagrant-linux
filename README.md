@@ -7,10 +7,11 @@ Devops kata to learn Vagrant with Linux
 You have to install:
 
 * RVM (https://rvm.io/rvm/install)
-  * Install a minimum of 2.x
+    * Install the stable RVM
+    * Install a minimum Ruby version of 2.x
 * Install Bundler
-  * `gem install bundler`
-  * Do **NOT** install Bundler globally.
+    * `gem install bundler`
+    * Do **NOT** install Bundler globally.
 * Install Vagrant (https://www.vagrantup.com/docs/installation/)
 * Install Virtualbox (https://www.virtualbox.org/wiki/Downloads)
 
@@ -25,20 +26,20 @@ simplest solution - Virtualbox.
 
 1. Clone this repository
 1. bundle install
-1. vagrant status
+1. `vagrant status`
     * You should see 
-1. bundle exec rake spec
+1. `bundle exec rake spec`
     * You will see a number of failures.
-1. vagrant ssh
+1. `vagrant ssh`
     * This will log you into the Ubuntu 14.04 VM.
     * Manually create all the things
     * Re-run the tests (in another terminal) until they pass.
-1. vagrant destroy
+1. `vagrant destroy`
     * This will destroy the VM
 1. Make the tests pass
     * This time, use the provided bash scaffolding
     * Instead of manually creating all the things, put the commands in bash.
-    * As you add each command, run "vagrant provision".
+    * As you add each command, run `vagrant provision`.
 
 # Concepts
 
