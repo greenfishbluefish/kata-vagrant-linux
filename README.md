@@ -6,12 +6,16 @@ Devops kata to learn Vagrant with Linux
 
 You have to install:
 
-* RVM (https://rvm.io/rvm/install)
-    * Install the stable RVM
-    * Install a minimum Ruby version of 2.x
-* Install Bundler
-    * `gem install bundler`
-    * Do **NOT** install Bundler globally.
+* To clone this repository
+    * Install Git (https://git-scm.com/downloads)
+    * On Windows, install from git-scm.com - other clients may not be up-to-date
+* To run the tests:
+    * Install RVM (https://rvm.io/rvm/install)
+        * Install the stable RVM
+        * Install a minimum Ruby version of 2.x
+    * Install Bundler
+        * `gem install bundler`
+        * Do **NOT** install Bundler globally or with `sudo`.
 * Install Vagrant (https://www.vagrantup.com/docs/installation/)
 * Install Virtualbox (https://www.virtualbox.org/wiki/Downloads)
 
@@ -24,7 +28,13 @@ simplest solution - Virtualbox.
 
 # Instructions
 
-1. Clone this repository
+You will need to use a shell. For Windows, either Powershell, Git-Bash, or the
+new Windows 10 Bash shell will work.
+
+1. Clone this repository.
+    * Do this on a local drive.
+    * Your home directory may be on a network drive.
+1. Enter the new directory.
 1. Install the necessary Ruby libraries with `bundle install`
 1. Look at the current VM status with `vagrant status`
     * You should see something that looks like:
@@ -53,7 +63,30 @@ default                   not created (virtualbox)
 
 # Concepts
 
-There are a lot of concepts going on here.
+There are a lot of concepts going on here. Let's break them down, one at a time.
+
+## Virtualization
+
+With Vagrant, you can create a new server in a completely isolated environment.
+You can destroy it and create it, over and over, until it's perfect. There are
+no links or dependencies on any shared resources, so this work is in a safe
+environment.
+
+Unlike the traditional pattern of tweaking a single server over and over until
+it's perfect, While this is a great idea in theory, in practice no-one is ever
+able to recreate it exactly as it was. There's always a missed step or a change
+in version or _something_. And, you will always need to create another copy of
+any given server.
+
+Vagrant promotes the pattern of recreating the server from scratch whenever a
+change is needed. This enforces the goal that all provisioning steps are done
+from scripts and those scripts are committed to source control. Changes to these
+scripts are;
+1. Done in Vagrant first (an operations development environment)
+1. Validated by the development team in _their_ Vagrant-managed development
+environments
+1. Verified by CI environments using Vagrant to rebuild the servers very time
+1. Deployed to QA (and then Production) using the same scripts.
   
 ## Idempotency
 
