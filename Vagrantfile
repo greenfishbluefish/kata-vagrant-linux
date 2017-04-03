@@ -25,5 +25,5 @@ Vagrant.configure('2') do |config|
     inline: 'echo I am provisioning'
 
   config.vm.provision :shell,
-    path: 'devops/scripts/script1.sh'
+    path: 'devops/provisioning/scripts/script1.sh'
 end

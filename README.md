@@ -56,10 +56,26 @@ default                   not created (virtualbox)
 1. Once all the tests pass, destroy the VM with `vagrant destroy`
     * We're going to recreate it shortly.
 1. Run the tests again.
-    * This time, instead of making the tests pass manuall, you will use the
+    * This time, instead of making the tests pass manually, you will use the
       provided bash scaffolding.
     * As you add each command, run `vagrant provision` to have them run against
       the VM. Read the below section on Idempotency for how to write them.
+
+# Discussion
+
+There are a lot of moving parts. Every file exists for a purpose and is heavily
+commented, explaining what it does and why.
+
+The primary components are:
+* The virtualization environment
+    * Vagrantfile for the virtualization definition
+    * The devops directory for all the devops functionality
+* The testing components
+    * Gemfile, Gemfile.lock, and .gemrc for installing libraries
+    * Rakefile for running tests (Rakefile == 'Ruby Makefile')
+    * The spec directory for the tests themselves
+* The source control components
+    * .gitignore for ensuring temporary files don't get checked in
 
 # Concepts
 

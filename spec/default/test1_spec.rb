@@ -4,26 +4,30 @@
 #   * http://rspec.info/
 #   * http://serverspec.org/
 describe 'testing' do
-  describe 'Installed packages' do
+  standard_packages = %w(
+    ntp
+  )
+  describe 'Standard packages' do
     describe package 'ntp' do
       it { should be_installed }
     end
   end
 
-#    it 'has version 9.3 installed' do
-#      command('psql -V').stdout.should match(/9.3.\d+/)
-#    end
+  describe 'Purpose 1' do
+    describe group 'developers' do
+      it { should exist }
+    end
 
-#      cpan_modules.each do |cpan_module|
-#        describe command("perl -M#{cpan_module} -e1") do
-#          let(:disable_sudo) { true }
-#          its(:stderr) { should_not match /^Can't locate/ }
-#        end
-#      end
+    describe user 'john' do
+      it { should exist }
+      it { should belong_to_primary_group 'developers' }
+      it { should belong_to_group 'apache' }
+    end
 
-
-#    it "sets the path to the 'cpanm' executable" do
-#      command('which cpanm').stdout.chop.should == '/usr/bin/cpanm'
-#    end
-
+    describe user 'jane' do
+      it { should exist }
+      it { should belong_to_primary_group 'developers' }
+      it { should belong_to_group 'apache' }
+    end
+  end
 end
