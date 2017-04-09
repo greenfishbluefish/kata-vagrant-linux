@@ -20,10 +20,6 @@ Vagrant.configure('2') do |config|
     vb.memory = 2 * 1024 # This is denominated in MB, so 2GB
   end
 
-  # q.v. https://www.vagrantup.com/docs/provisioning/shell.html
-  config.vm.provision :shell,
-    inline: 'echo I am provisioning'
-
   config.vm.provision :shell,
     path: 'devops/provisioning/scripts/script1.sh'
 end
