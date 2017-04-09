@@ -51,17 +51,6 @@ config.close
 
 options = Net::SSH::Config.for(host, [config.path])
 
-options[:user] ||= Etc.getlogin
-
+options[:user] ||= 'vagrant'
 set :host, options[:host_name] || host
 set :ssh_options, options
-
-# Disable sudo
-# set :disable_sudo, true
-
-
-# Set environment variables
-# set :env, :LANG => 'C', :LC_MESSAGES => 'C' 
-
-# Set PATH
-# set :path, '/sbin:/usr/local/sbin:$PATH'
