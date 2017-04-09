@@ -61,6 +61,10 @@ default                   not created (virtualbox)
     * As you add each command, run `vagrant provision` to have them run against
       the VM. Read the below section on Idempotency for how to write them.
 
+If you get stuck, I've created an "answer" branch with how I would solve this
+problem. There's many ways to solve this (and other katas go into different ways
+using other tools), so don't try and hit my exact solution.
+
 # Discussion
 
 There are a lot of moving parts. Every file exists for a purpose and is heavily
