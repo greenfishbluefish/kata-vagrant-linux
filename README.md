@@ -31,33 +31,36 @@ simplest solution - Virtualbox.
 You will need to use a shell. For Windows, either Powershell, Git-Bash, or the
 new Windows 10 Bash shell will work.
 
-1. Clone this repository.
+All instructions will be labeled with "Host" or "Guest". The host machine is the
+machine you run Git and Vagrant in. The guest machine is the VM.
+
+1. (Host) Clone this repository.
     * Do this on a local drive.
     * Your home directory may be on a network drive.
-1. Enter the new directory.
-1. Install the necessary Ruby libraries with `bundle install`
-1. Look at the current VM status with `vagrant status`
+1. (Host) Enter the new directory.
+1. (Host) Install the necessary Ruby libraries with `bundle install`
+1. (Host) Look at the current VM status with `vagrant status`
     * You should see something that looks like:
 ```
 Current machine states:
 
 default                   not created (virtualbox)
 ```
-1. Bring the VM up with `vagrant up`
-1. Log onto the VM with `vagrant ssh` and walk around, take a look.
-    * There is a folder `/vagrant`. This is a shared folder that is linked to
-      the folder on the host machine which contains the Vagrantfile.
-1. Run the acceptance tests with `bundle exec rake spec`
-    * The tests will bring the VM if it's not up yet.
+1. (Host) Bring the VM up with `vagrant up`
+1. (Host) Log onto the VM with `vagrant ssh` and walk around, take a look.
+    * (Guest) There is a folder `/vagrant`. This is a shared folder that is linked
+      to the folder on the host machine which contains the Vagrantfile.
+1. (Host) Run the acceptance tests with `bundle exec rake spec`
+    * The tests will bring up the VM if it's not up yet.
     * You will see a number of failures. These are what you're going to work on.
-1. Manually fix the failures.
-    * Re-run the tests (in another terminal) until they pass.
-    * For example, `sudo apt-get install -y ntp` to fix the first failure.
-1. Once all the tests pass, destroy the VM with `vagrant destroy`
+1. (Guest) Manually fix the failures.
+    * (Host) Re-run the tests (in another terminal) until they pass.
+    * (Guest) For example, `sudo groupadd acme` to fix the first failure.
+1. (Host) Once all the tests pass, destroy the VM with `vagrant destroy`
     * We're going to recreate it shortly.
-1. Run the tests again.
+1. (Host) Run the tests again.
     * This time, instead of making the tests pass manually, you will use the
-      provided bash scaffolding.
+      provided bash scaffolding in `devops/provisioning/scripts`.
     * As you add each command, run `vagrant provision` to have them run against
       the VM. Read the below section on Idempotency for how to write them.
 
