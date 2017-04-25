@@ -4,8 +4,10 @@ Devops kata to learn Vagrant with Linux
 
 # Pre-requisites
 
-You have to install:
+You have to:
 
+* Install Vagrant (https://www.vagrantup.com/docs/installation/)
+* Install Virtualbox (https://www.virtualbox.org/wiki/Downloads)
 * To clone this repository
     * Install Git (https://git-scm.com/downloads)
     * On Windows, install from git-scm.com - other clients may not be up-to-date
@@ -16,15 +18,17 @@ You have to install:
     * Install Bundler
         * `gem install bundler`
         * Do **NOT** install Bundler globally or with `sudo`.
-* Install Vagrant (https://www.vagrantup.com/docs/installation/)
-* Install Virtualbox (https://www.virtualbox.org/wiki/Downloads)
 
 ## Virtualbox and Windows 8/10
 
 If you're on Windows 8.1 or 10 and have enabled Hyper-V (say, for Docker), you
 will want to disable Hyper-V and reboot your workstation. While Vagrant does
-work with Hyper-V, it is much harder to setup. For learning Vagrant, use the
+work with Hyper-V, it is much harder to setup. For these katas, use the
 simplest solution - Virtualbox.
+
+## Series of katas
+
+This kata is the first of a series of devops katas. Please visit the [entrypoint](https://github.com/greenfishbluefish/devops-katas) for more information.
 
 # Instructions
 
