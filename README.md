@@ -1,4 +1,4 @@
-# Devops kata to learn Vagrant (with Linux)
+# Devops Kata to learn Vagrant (with Linux)
 
 Devops kata to learn Vagrant with Linux
 
@@ -8,7 +8,7 @@ You have to:
 
 * Install Vagrant (https://www.vagrantup.com/docs/installation/)
 * Install Virtualbox (https://www.virtualbox.org/wiki/Downloads)
-* To clone this repository
+* Clone this repository
     * Install Git (https://git-scm.com/downloads)
     * On Windows, install from git-scm.com - other clients may not be up-to-date
 * To run the tests:
@@ -18,6 +18,8 @@ You have to:
     * Install Bundler
         * `gem install bundler`
         * Do **NOT** install Bundler globally or with `sudo`.
+    * Install the Ruby package dependencies
+        * `bundle install`
 
 ## Virtualbox and Windows 8/10
 
