@@ -1,3 +1,16 @@
+# This file sets the default parameters for the RSpec test suite. You will be
+# invoking the test suite with "bundle exec rake".
+#
+# https://www.relishapp.com/rspec/rspec-core/docs/configuration/read-command-line-configuration-options-from-files
+
+# This ensures that, if possible, the output will be colorized.
 --color
+
+# This ensures the spec_helper.rb file is loaded. This often happens by default,
+# but it's safer to ensure it's loaded.
 --require spec_helper
+
+# This sets the default reporting format to 'documentation'. There are dozens of
+# different formats. The most common one I use is 'progress' which reports the
+# results as a line of dots.
 --format documentation
