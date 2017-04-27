@@ -23,6 +23,8 @@ USERGROUP='acme'
 getent group  $USERGROUP &>/dev/null || groupadd $USERGROUP
 getent passwd $USERGROUP &>/dev/null || useradd -g $USERGROUP $USERGROUP
 
+echo "127.0.0.1 acme.dev" >> /etc/hosts
+
 ########################################
 # This is the section about configuring Apache for the ACME site.
 
