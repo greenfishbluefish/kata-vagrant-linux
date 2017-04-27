@@ -16,15 +16,15 @@ describe 'ACME site' do
     describe file("/etc/apache2/sites-available/acme.conf") do
       it { should be_file }
       it { should be_mode('644') }
-      it { should be_owned_by('acme') }
-      it { should be_grouped_into('acme') }
+      it { should be_owned_by('root') }
+      it { should be_grouped_into('root') }
     end
 
     # The pattern created by the Debian package maintainers is to have the file
     # in sites-available/, then link to it in sites-enabled/. That allows the
     # sysadmin to disable a site quickly without removing files.
     describe file("/etc/apache2/sites-enabled/acme.conf") do
-      it { should be_linked_to "/etc/apache2/sites-available/acme.conf" }
+      it { should be_linked_to "../sites-available/acme.conf" }
     end
   end
 
