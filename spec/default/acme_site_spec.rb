@@ -57,7 +57,7 @@ describe 'ACME site' do
     # There are many ways of getting a webpage within RSpec and Ruby, such as
     # Capybara, Faraday, and others. However, running a command on the server
     # itself is the cheapest and simplest solution.
-    describe command('curl http://localhost/') do
+    describe command('curl http://acme.dev/') do
       its(:exit_status) { should eq 0 }
 
       # This is saying "Somewhere in the stdout, I should see this string."
