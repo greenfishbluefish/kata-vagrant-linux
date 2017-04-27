@@ -42,6 +42,7 @@ PLATFORMS
 DEPENDENCIES
   net-ssh!
   rake!
+  rspec!
   serverspec!
 
 BUNDLED WITH

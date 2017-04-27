@@ -45,7 +45,8 @@ cat > $CONF_FILE <<- EOF
 EOF
 
 # The -R parameter to chown is "apply recursively".
-chown -R ${USERGROUP}.${USERGROUP} $CONF_FILE
+# Apache configuration files are owned by root.
+chown -R root.root $CONF_FILE
 chmod 0644 $CONF_FILE
 
 ENABLE_FILE="/etc/apache2/sites-enabled/${USERGROUP}.conf"
@@ -53,7 +54,7 @@ ENABLE_FILE="/etc/apache2/sites-enabled/${USERGROUP}.conf"
 # ln --force will overwrite the symbolic link. This means ln won't error out if
 # the link already exists. It will also update the link (if it's changed) to
 # what we want it to be. Idempotent.
-ln --symbolic --force $CONF_FILE $ENABLE_FILE
+ln --symbolic --force "../sites-available/${USERGROUP}.conf" $ENABLE_FILE
 
 # Delete the default Apache configuration file provided by the apache2 package.
 rm --force /etc/apache2/sites-enabled/000*
